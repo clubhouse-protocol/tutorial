@@ -10,6 +10,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add /docs"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-syntax-class-properties": "^7.2.0",
