@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Quiz from 'quizes/Quiz';
+import Steps from 'screens/Steps';
+import App from 'components/App';
 
 const root = document.createElement('div');
+root.style.height = '100%';
 document.body.appendChild(root);
 
 const boot = async () => {
   ReactDom.render(
-    <Quiz />,
+    <App>
+      <Steps />
+    </App>,
     root,
   );
 };
