@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Router from 'routes/Router';
-import App from 'components/App';
+import App from 'screens/App';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowLeft, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faHome, faCheck } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faArrowLeft, faHome);
+library.add(faArrowLeft, faHome, faCheck);
 
 const root = document.createElement('div');
 root.style.height = '100%';

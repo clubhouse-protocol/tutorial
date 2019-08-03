@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Route, Link, HashRouter } from "react-router-dom";
-import Course from './Coure';
-import Courses from "./Courses";
+import Course from './Course';
+import Courses from "./Welcome";
 
 const Router: FunctionComponent = () => (
   <HashRouter>

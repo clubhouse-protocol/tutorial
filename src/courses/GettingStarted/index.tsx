@@ -1,27 +1,37 @@
-import createCourse from "components/Course/create";
-import Welcome from 'steps/Welcome';
-import SetupIdentity from 'steps/SetupIdentity';
-import SetupChannel from 'steps/SetupChannel';
-import InviteAlice from 'steps/InviteAlice';
-import Done from 'steps/Done';
+import Welcome from './Welcome';
+import SetupIdentity from './SetupIdentity';
+import SetupChannel from './SetupChannel';
+import SharingYourKey from './SharingYourKey';
+import InviteAlice from './InviteAlice';
+import GettingMessages from './GettingMessages';
+import SendingMessages from './SendingMessages';
+import Done from './Done';
+import { StepDescription } from 'screens/Course/types';
 
-const GettingStarted = createCourse({
-  steps: [{
-    id: 'welcome',
-    screen: Welcome,
-  }, {
-    id: 'setup-idenity',
-    screen: SetupIdentity,
-  }, {
-    id: 'setup-channel',
-    screen: SetupChannel,
-  }, {
-    id: 'invite-alice',
-    screen: InviteAlice,
-  }, {
-    id: 'done',
-    screen: Done,
-  }],
-});
+const steps: StepDescription[] = [{
+  id: 'welcome',
+  screen: Welcome,
+}, {
+  id: 'setup-idenity',
+  screen: SetupIdentity,
+}, {
+  id: 'setup-channel',
+  screen: SetupChannel,
+}, {
+  id: 'sharing-your-key',
+  screen: SharingYourKey,
+}, {
+  id: 'invite-alice',
+  screen: InviteAlice,
+}, {
+  id: 'getting-messages',
+  screen: GettingMessages,
+}, {
+  id: 'sending-messages',
+  screen: SendingMessages,
+}, {
+  id: 'done',
+  screen: Done,
+}];
 
-export default GettingStarted;
+export default steps;
