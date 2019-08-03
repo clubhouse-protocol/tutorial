@@ -1,3 +1,3 @@
 module.exports = (async () => {
-  await channel.send('foo');
+  return await channel.send('hello!');
 })();
