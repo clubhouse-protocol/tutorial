@@ -3,6 +3,7 @@ import SetupIdentity from './SetupIdentity';
 import SetupChannel from './SetupChannel';
 import SharingYourKey from './SharingYourKey';
 import InviteAlice from './InviteAlice';
+import AcceptingInvitation from './AcceptingInvitation';
 import GettingMessages from './GettingMessages';
 import SendingMessages from './SendingMessages';
 import Done from './Done';
@@ -23,6 +24,9 @@ const steps: StepDescription[] = [{
 }, {
   id: 'invite-alice',
   screen: InviteAlice,
+}, {
+  id: 'accepting-invitation',
+  screen: AcceptingInvitation,
 }, {
   id: 'getting-messages',
   screen: GettingMessages,
