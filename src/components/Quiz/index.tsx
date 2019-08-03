@@ -3,70 +3,27 @@ import React, {
   FunctionComponent,
 } from 'react';
 import MonacoEditor from './InlineEditor';
-import styled from 'styled-components';
 import { runCode } from './helpers';
+import {
+  ButtonWrapper,
+  DescriptionWrapper,
+  EditorWrapper,
+  ErrorWrapper,
+  RightWrapper,
+  Wrapper,
+} from './elements';
+import { Props } from './types';
 
 require('./highlight.css');
 
-const Wrapper = styled.div`
-  display: flex;
-  flex: 1 0 0;
-`;
-
-const DescriptionWrapper = styled.div`
-  flex: 1;
-  padding: 0 50px;
-
-  p code {
-    color: #fabd2f;
-  }
-
-  a {
-    color: #9b59b6;
-  }
-`;
-
-const ErrorWrapper = styled.div`
-  color: #e74c3c;
-  text-align: center;
-`;
-
-const RightWrapper = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-`;
-
-const EditorWrapper = styled.div`
-  flex: 1 0 0;
-  overflow-y: auto;
-  padding-top: 50px
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  padding: 15px;
-`;
-
-interface Props {
-  description?: string;
-  createContext: () => Promise<{[name: string]: any}>;
-  initialCode?: string;
-  test: (state:any, result: any) => Promise<boolean>;
-  onComplete: () => any;
-  solution: string;
-}
-
-const CodeEditor: FunctionComponent<Props> = ({
+const CodeEditor: FunctionComponent<Props<any>> = ({
   createContext = async () => ({}),
   initialCode = '',
   test,
   onComplete,
   description,
   solution,
-}: Props) => {
+}: Props<any>) => {
   const [running, setRunning] = useState(false);
   const [code, setCode] = useState(initialCode);
   const [error, setError] = useState<Error | undefined>();
@@ -75,9 +32,8 @@ const CodeEditor: FunctionComponent<Props> = ({
     setRunning(true);
     runCode(code, createContext)
       .then(async ({ context, result }) => {
-        if (await test(context, result)) {
-          onComplete();
-        }
+        await test(context, result);
+        onComplete();
         setRunning(false);
       })
       .catch(err => {

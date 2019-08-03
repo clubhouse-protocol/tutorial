@@ -27,6 +27,7 @@
     "@types/babel__core": "^7.1.2",
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
+    "@types/react-router-dom": "^4.3.4",
     "@types/styled-components": "^4.1.18",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
@@ -38,6 +39,7 @@
     "markdown-loader": "^5.1.0",
     "monaco-editor": "^0.17.1",
     "monaco-editor-webpack-plugin": "^1.7.0",
+    "raw-loader": "^3.1.0",
     "style-loader": "^0.23.1",
     "typescript": "^3.5.3",
     "webpack": "^4.39.0",
@@ -46,11 +48,15 @@
   },
   "dependencies": {
     "@babel/preset-env-standalone": "^7.5.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.21",
+    "@fortawesome/free-solid-svg-icons": "^5.10.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@nx-js/compiler-util": "^2.0.0",
     "clubhouse-protocol": "^1.0.0-alpha.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-monaco-editor": "^0.28.0",
+    "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2"
   }
 }

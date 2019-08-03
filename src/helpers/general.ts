@@ -1,0 +1,1 @@
+export const range = (length: number) => new Array(length).fill(undefined).map((a, i) => i);
